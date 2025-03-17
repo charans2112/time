@@ -1,10 +1,9 @@
-// Initialize Supabase (Ensure this is at the TOP and not repeated anywhere)
+// Ensure Supabase is initialized before any usage
 const supabaseUrl = "https://mfpgbqamqsdjmjlcbkqc.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mcGdicWFtcXNkam1qbGNia3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyMDQ3MjAsImV4cCI6MjA1Nzc4MDcyMH0.zKQ30--UBBwLlOHiNgmExOLmdtzq_U8avgYJoHtiZUk";
-// Ensure Supabase is initialized properly
 const supabase = window.supabase?.createClient(supabaseUrl, supabaseKey) || supabase.createClient(supabaseUrl, supabaseKey);
 
-console.log("Supabase initialized:", supabase); // Debugging check
+console.log("✅ Supabase Initialized:", supabase); // Debugging
 
 function slugify(text) {
     return text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
