@@ -39,6 +39,16 @@ async function saveCapsule() {
         console.error("Error saving capsule:", error.message);
     } else {
         console.log("Capsule saved:", data);
+
+        document.getElementById("capsule-name").value = "";
+        document.getElementById("unlock-date").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("capsule-link").value = "";
+        document.getElementById("file-upload").value = ""; // Reset file input
+
+        document.getElementById("editing-capsule-id").value = ""; // Clear editing ID
+        document.getElementById("cancel-edit-btn").classList.add("hidden"); // Hide cancel button if visible
+
         loadCapsuleHistory();
     }
 }
