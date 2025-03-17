@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Time Capsule</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Time Capsule</h1>
+        
+        <div id="creation-form">
+            <input type="hidden" id="editing-capsule-id"> <!-- Hidden field for editing -->
+            
+            <label for="capsule-name">Capsule Name:</label>
+            <input type="text" id="capsule-name" placeholder="Enter a name for your capsule" required autocomplete="off">
+
+            <label for="unlock-date">Set Unlock Date:</label>
+            <input type="datetime-local" id="unlock-date">
+            
+            <label for="message">Write a Message:</label>
+            <textarea id="message" placeholder="Your special message..."></textarea>
+
+            <label for="file-upload">Upload an Image/Video:</label>
+            <input type="file" id="file-upload" accept="image/*, video/*">
+
+            <label for="capsule-link">Insert a Link:</label>
+            <input type="url" id="capsule-link" placeholder="https://example.com"  autocomplete="off">
+
+            <button onclick="saveCapsule()">Save Capsule</button>
+            <button onclick="cancelEdit()" class="hidden" id="cancel-edit-btn">Cancel Edit</button>
+            <div id="capsule-link" class="hidden"></div>
+        </div>
+
+        <h2>My Capsules</h2>
+        <ul id="capsule-history"></ul>
+    </div>
+</body>
+</html>
