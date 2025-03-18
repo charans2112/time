@@ -66,7 +66,7 @@ function showCapsuleContent(message, fileData, fileType, link) {
         const linkElement = document.createElement("a");
         linkElement.href = link;
         linkElement.target = "_blank";
-        linkElement.innerText = "Click here";
+        linkElement.innerText = "Touch here for the next surprise 🪄🔮";
         mediaContainer.appendChild(linkElement);
     }
 
